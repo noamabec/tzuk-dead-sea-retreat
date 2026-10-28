@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>צוק · מתחם אירוח על הצוק מול ים המלח</title>
+  <meta name="description" content="שלוש יחידות אירוח על שפת מצוקי דרגות, בריכת אינפיניטי מול ים המלח וזריחה מעל הרי מואב. בודקים תאריכים ומזמינים אונליין.">
+  <link rel="preload" href="fonts/fbtubic-sanscon-extralightwebfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/hero-pool.jpg" as="image">
+  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="stylesheet" href="css/pages.css?v=3">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="home">
+  <div id="layout-header"></div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-media">
+        <img src="assets/img/hero-pool.jpg" width="2048" height="1152" alt="בריכת האינפיניטי של צוק בזריחה, וים המלח והרי מואב מתחתיה" class="hero-img">
+      </div>
+      <div class="hero-content wrap">
+        <p class="coords"><span dir="ltr">31°35′N  35°23′E</span><span>מצוקי דרגות, 400 מטר מעל ים המלח</span></p>
+        <h1 id="heroTitle" class="h1"><span>מתחם אירוח על הצוק,</span><span>מול <em>ים המלח</em>.</span></h1>
+        <p class="lead">שלוש יחידות, בריכה אחת מול הנוף, וזריחה מעל הרי מואב.</p>
+      </div>
+    </section>
+
+    <!-- Booking bar, overlapping the hero bottom -->
+    <form class="booking-bar" id="book" action="book.html" method="get" aria-label="בדיקת זמינות" data-range>
+      <div class="field">
+        <span class="field-label" id="lblCheckin">הגעה</span>
+        <button type="button" class="dp-trigger" id="checkin" data-role="checkin" aria-labelledby="lblCheckin checkin"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button>
+        <input type="hidden" name="checkin">
+      </div>
+      <div class="field">
+        <span class="field-label" id="lblCheckout">עזיבה</span>
+        <button type="button" class="dp-trigger" id="checkout" data-role="checkout" aria-labelledby="lblCheckout checkout"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button>
+        <input type="hidden" name="checkout">
+      </div>
+      <div class="field">
+        <label for="guests">אורחים</label>
+        <select id="guests" name="guests">
+          <option value="1">אורח אחד</option>
+          <option value="2" selected>2 אורחים</option>
+          <option value="3">3 אורחים</option>
+          <option value="4">4 אורחים</option>
+          <option value="5">5 אורחים</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">בדיקת זמינות</button>
+      <a href="#suites" class="link-secondary">להכיר את היחידות</a>
+    </form>
+
+    <ul class="trust-strip wrap" aria-label="עובדות על המתחם">
+      <li>3 יחידות בלבד</li>
+      <li>בריכת אינפיניטי מחוממת</li>
+      <li>20 דקות מעין גדי</li>
+    </ul>
+
+    <!-- ============ PROMISE ============ -->
+    <section class="promise" aria-labelledby="promiseTitle">
+      <img src="assets/img/view-wide.jpg" width="1456" height="736" alt="המבט מראש מצוקי דרגות אל ים המלח" class="promise-img" loading="lazy">
+      <div class="promise-content wrap">
+        <h2 id="promiseTitle" class="h2 reveal">כאן הים נמצא <em>מתחת</em> לרגליים,<br>והשקט מעל הכל.</h2>
+        <dl class="promise-stats">
+          <div><dt>מעל פני הים</dt><dd><bdi>400</bdi> מ'</dd></div>
+          <div><dt>יחידות אירוח</dt><dd><bdi>3</bdi></dd></div>
+          <div><dt>בריכה מול הנוף</dt><dd><bdi>1</bdi></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ SUITES ============ -->
+    <section class="section suites" id="suites" aria-labelledby="suitesTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−060</span><span class="depth-unit">מ'</span><span class="depth-label">היחידות</span></p>
+          <h2 id="suitesTitle" class="h2">שלוש יחידות, ואין שתיים דומות.</h2>
+        </header>
+        <div class="suite-grid">
+          <article class="suite-card reveal">
+            <a href="suite.html?u=shachar" class="suite-media">
+              <img src="assets/img/suite-shachar.jpg" width="1200" height="905" alt="סוויטת שחר: מיטה מול חלון זכוכית וג'קוזי במרפסת מול הזריחה" loading="lazy">
+              <span class="suite-name">שחר</span>
+            </a>
+            <div class="suite-body">
+              <p class="suite-tag">סוויטה זוגית, הכי קרובה לשפת הצוק</p>
+              <ul class="suite-facts">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 14.5c3 0 6 2 6 5.5"/></svg>עד <bdi>2</bdi></li>
+                <li><bdi>45</bdi> מ"ר</li>
+                <li>ג'קוזי במרפסת</li>
+              </ul>
+              <p class="suite-price">החל מ-<bdi>₪1,450</bdi> ללילה</p>
+              <a href="suite.html?u=shachar" class="btn btn-ghost">לפרטים</a>
+            </div>
+          </article>
+          <article class="suite-card reveal">
+            <a href="suite.html?u=melach" class="suite-media">
+              <img src="assets/img/suite-melach.jpg" width="1200" height="905" alt="יחידת מלח: סלון מרווח עם מטבח וחלונות לים המלח" loading="lazy">
+              <span class="suite-name">מלח</span>
+            </a>
+            <div class="suite-body">
+              <p class="suite-tag">יחידה משפחתית מרווחת, עם מטבח מלא</p>
+              <ul class="suite-facts">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 14.5c3 0 6 2 6 5.5"/></svg>עד <bdi>5</bdi></li>
+                <li><bdi>70</bdi> מ"ר</li>
+                <li>2 חדרי שינה</li>
+              </ul>
+              <p class="suite-price">החל מ-<bdi>₪1,650</bdi> ללילה</p>
+              <a href="suite.html?u=melach" class="btn btn-ghost">לפרטים</a>
+            </div>
+          </article>
+          <article class="suite-card reveal">
+            <a href="suite.html?u=sela" class="suite-media">
+              <img src="assets/img/suite-sela.jpg" width="1200" height="905" alt="סוויטת סלע: חצר פנימית עם מקלחת חוץ ועץ זית" loading="lazy">
+              <span class="suite-name">סלע</span>
+            </a>
+            <div class="suite-body">
+              <p class="suite-tag">סוויטת אבן עם חצר פנימית ומקלחת חוץ</p>
+              <ul class="suite-facts">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 14.5c3 0 6 2 6 5.5"/></svg>עד <bdi>4</bdi></li>
+                <li><bdi>55</bdi> מ"ר</li>
+                <li>חצר פרטית</li>
+              </ul>
+              <p class="suite-price">החל מ-<bdi>₪1,350</bdi> ללילה</p>
+              <a href="suite.html?u=sela" class="btn btn-ghost">לפרטים</a>
+            </div>
+          </article>
+        </div>
+        <p class="section-cta"><a href="suites.html" class="link-arrow">השוואת היחידות</a></p>
+      </div>
+    </section>
+
+    <!-- ============ COMPOUND (aerial with hotspots) ============ -->
+    <section class="section compound" id="compound" aria-labelledby="compoundTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−120</span><span class="depth-unit">מ'</span><span class="depth-label">המתחם</span></p>
+          <h2 id="compoundTitle" class="h2">בריכה אחת. <em>כל הים.</em></h2>
+          <p class="section-lead">דונם וחצי על שפת המצוק. שלוש יחידות שכל אחת מהן עומדת בפני עצמה, ובאמצע הבריכה שמשקיפה על ים המלח.</p>
+        </header>
+        <figure class="aerial reveal">
+          <img src="assets/img/compound-aerial.jpg" width="2048" height="1152" alt="צילום רחפן של המתחם: שלוש יחידות אבן ובריכת אינפיניטי על שפת המצוק" loading="lazy">
+          <a class="hotspot" href="suite.html?u=shachar" style="--x:17%;--y:30%"><span class="hs-dot" aria-hidden="true"></span><span class="hs-label">שחר</span></a>
+          <a class="hotspot" href="suite.html?u=sela" style="--x:27%;--y:62%"><span class="hs-dot" aria-hidden="true"></span><span class="hs-label">סלע</span></a>
+          <a class="hotspot" href="suite.html?u=melach" style="--x:71%;--y:66%"><span class="hs-dot" aria-hidden="true"></span><span class="hs-label">מלח</span></a>
+          <span class="hotspot hotspot-static" style="--x:59%;--y:36%"><span class="hs-dot" aria-hidden="true"></span><span class="hs-label">הבריכה</span></span>
+        </figure>
+        <ul class="amenities">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 21c2 0 2-1.5 4-1.5S8 21 10 21s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M8 13V5a2 2 0 0 1 4 0M16 13V5a2 2 0 0 0-4 0M8 8h8"/></svg>בריכת אינפיניטי מחוממת</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20M12 6v3M5 9l2 2M19 9l-2 2M7 18a5 5 0 0 1 10 0"/></svg>מרפסת זריחה משותפת</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2 3 5 5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-7.5zM5 21h14"/></svg>פינת מדורה וכוכבים</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 16V8h4a2.5 2.5 0 0 1 0 5H9"/></svg>חניה פרטית</li>
+        </ul>
+        <p class="section-cta"><a href="compound.html" class="link-arrow">לסיור במתחם</a></p>
+      </div>
+    </section>
+
+    <!-- ============ HOSTS ============ -->
+    <section class="section hosts" id="hosts" aria-labelledby="hostsTitle">
+      <div class="wrap hosts-grid">
+        <figure class="hosts-media reveal">
+          <img src="assets/img/hosts.jpg" width="928" height="1152" alt="מאיה ועידו, המארחים, על המרפסת מול המצוק" loading="lazy">
+        </figure>
+        <div class="hosts-text">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−170</span><span class="depth-unit">מ'</span><span class="depth-label">המארחים</span></p>
+          <h2 id="hostsTitle" class="h2">בנינו את המקום<br>שתמיד <em>חיפשנו</em>.</h2>
+          <p>לפני עשר שנים עמדנו כאן בפעם הראשונה, בחמש וחצי בבוקר, וראינו את השמש עולה מעל מואב. שלוש שנים בנינו, אבן אחרי אבן, והחלטנו שלא יהיו כאן יותר משלוש יחידות.</p>
+          <blockquote class="quote">"אנחנו רוצים שתרגישו שהמקום הזה שלכם, ושהשקט הוא חלק מהמחיר."</blockquote>
+          <p class="signature">מאיה ועידו</p>
+          <a href="about.html" class="btn btn-ghost">הסיפור שלנו</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ A DAY AT TZUK (pinned story, dawn to night) ============ -->
+    <section class="day" id="day" aria-labelledby="dayTitle">
+      <div class="day-pin">
+        <div class="wrap day-inner">
+          <header class="day-head">
+            <p class="depth-tag"><span class="depth-num" dir="ltr">−220</span><span class="depth-unit">מ'</span><span class="depth-label">יום בצוק</span></p>
+            <h2 id="dayTitle" class="h2">ככה נראה יום אצלנו.</h2>
+          </header>
+          <ol class="day-clock" aria-hidden="true">
+            <li class="is-active">05:40</li><li>08:00</li><li>11:00</li><li>17:00</li><li>21:00</li>
+          </ol>
+          <div class="day-stage">
+            <article class="day-step is-active">
+              <figure><img src="assets/img/suite-shachar.jpg" width="1200" height="905" alt="זריחה מהמיטה בסוויטת שחר" loading="lazy"></figure>
+              <div class="day-text"><p class="day-time"><bdi>05:40</bdi></p><h3 class="h3">זריחה מהמיטה.</h3><p>לא צריך שעון מעורר. האור מעל מואב מעיר אתכם בעצמו.</p></div>
+            </article>
+            <article class="day-step">
+              <figure><img src="assets/img/day-breakfast.jpg" width="1200" height="1200" alt="סל בוקר מקומי על שולחן אבן במרפסת" loading="lazy"></figure>
+              <div class="day-text"><p class="day-time"><bdi>08:00</bdi></p><h3 class="h3">סל בוקר במרפסת.</h3><p>לחם מהכפר, גבינות עיזים, תמרים וקפה. מגיע לדלת בשעה שבחרתם.</p></div>
+            </article>
+            <article class="day-step">
+              <figure><img src="assets/img/day-sea.jpg" width="1200" height="1200" alt="גבישי מלח לבנים על חוף ים המלח" loading="lazy"></figure>
+              <div class="day-text"><p class="day-time"><bdi>11:00</bdi></p><h3 class="h3">למטה, אל הים.</h3><p>15 דקות נסיעה לחוף, 20 לעין גדי. חוזרים לפני החום הגדול.</p></div>
+            </article>
+            <article class="day-step">
+              <figure><img src="assets/img/day-pool.jpg" width="1200" height="1200" alt="הבריכה בשעת השקיעה עם מיטות שיזוף" loading="lazy"></figure>
+              <div class="day-text"><p class="day-time"><bdi>17:00</bdi></p><h3 class="h3">הבריכה בשקיעה.</h3><p>המים חמימים, הסלע מקבל צבע נחושת, והעמק למטה נכנס לצל.</p></div>
+            </article>
+            <article class="day-step">
+              <figure><img src="assets/img/night-fire.jpg" width="2048" height="1152" alt="פינת המדורה בלילה תחת שביל החלב" loading="lazy"></figure>
+              <div class="day-text"><p class="day-time"><bdi>21:00</bdi></p><h3 class="h3">מדורה וכוכבים.</h3><p>בלי אורות עיר. רק האש, שביל החלב, והאורות הקטנים של ירדן מעבר לים.</p></div>
+            </article>
+          </div>
+          <p class="day-cta"><a href="experiences.html" class="btn btn-ghost">לחוויות ותוספות</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AREA (draggable distance cards) ============ -->
+    <section class="section area" id="area" aria-labelledby="areaTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−280</span><span class="depth-unit">מ'</span><span class="depth-label">הסביבה</span></p>
+          <h2 id="areaTitle" class="h2">הכל קרוב, <em>חוץ מהרעש</em>.</h2>
+        </header>
+      </div>
+      <div class="distance-row" tabindex="0" aria-label="יעדים בסביבה וזמני נסיעה מהמתחם, אפשר לגלול לצדדים">
+        <article class="place">
+          <div class="place-media" aria-hidden="true"><img src="assets/img/place-dragot.jpg" width="905" height="1200" alt="" loading="lazy"></div>
+          <div class="place-body">
+            <p class="dist-min"><bdi>5</bdi><small>דק' נסיעה</small></p>
+            <h3>נחל דרגות</h3>
+            <p class="place-note">קניון מצוקים, סנפלינג למיטיבי לכת</p>
+          </div>
+          <button type="button" class="place-pin" aria-pressed="false" aria-label="הצגת תמונה: נחל דרגות"><svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </article>
+        <article class="place">
+          <div class="place-media" aria-hidden="true"><img src="assets/img/place-beach.jpg" width="905" height="1200" alt="" loading="lazy"></div>
+          <div class="place-body">
+            <p class="dist-min"><bdi>15</bdi><small>דק' נסיעה</small></p>
+            <h3>חוף ים המלח</h3>
+            <p class="place-note">חוף ציבורי עם מקלחות</p>
+          </div>
+          <button type="button" class="place-pin" aria-pressed="false" aria-label="הצגת תמונה: חוף ים המלח"><svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </article>
+        <article class="place">
+          <div class="place-media" aria-hidden="true"><img src="assets/img/place-eingedi.jpg" width="905" height="1200" alt="" loading="lazy"></div>
+          <div class="place-body">
+            <p class="dist-min"><bdi>20</bdi><small>דק' נסיעה</small></p>
+            <h3>עין גדי</h3>
+            <p class="place-note">שמורת הטבע והמעיינות</p>
+          </div>
+          <button type="button" class="place-pin" aria-pressed="false" aria-label="הצגת תמונה: מפל דוד בעין גדי"><svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </article>
+        <article class="place">
+          <div class="place-media" aria-hidden="true"><img src="assets/img/exp-masada.jpg" width="1200" height="905" alt="" loading="lazy"></div>
+          <div class="place-body">
+            <p class="dist-min"><bdi>35</bdi><small>דק' נסיעה</small></p>
+            <h3>מצדה</h3>
+            <p class="place-note">עלייה בשביל הנחש לפני הזריחה</p>
+          </div>
+          <button type="button" class="place-pin" aria-pressed="false" aria-label="הצגת תמונה: זריחה ממצדה"><svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </article>
+      </div>
+      <p class="arrival wrap"><span class="arrival-label">איך מגיעים</span><span>ירושלים <bdi>60</bdi> דק'</span><span>נתב"ג <bdi>90</bdi> דק'</span><a href="guest-info.html" class="link-arrow">הוראות הגעה</a></p>
+      <p class="drag-hint wrap" aria-hidden="true">גררו לצדדים</p>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section reviews" id="reviews" aria-labelledby="reviewsTitle">
+      <div class="wrap">
+        <header class="section-head reviews-head">
+          <div>
+            <p class="depth-tag"><span class="depth-num" dir="ltr">−330</span><span class="depth-unit">מ'</span><span class="depth-label">המלצות אורחים</span></p>
+            <h2 id="reviewsTitle" class="h2">מה אורחים כתבו לנו.</h2>
+            <p class="section-lead">ממחברת האורחים ומההודעות שקיבלנו אחרי העזיבה.</p>
+          </div>
+          <div class="score" aria-label="דירוג ממוצע 4.9 מתוך 5, על סמך 112 חוות דעת">
+            <span class="score-num"><bdi>4.9</bdi></span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="score-meta"><bdi>112</bdi> חוות דעת</span>
+          </div>
+        </header>
+
+        <div class="review-grid">
+          <article class="review reveal">
+            <img src="assets/img/review-coffee.jpg" width="1200" height="905" alt="שתי כוסות קפה על מעקה המרפסת מול הזריחה" loading="lazy" class="review-photo">
+            <p>התעוררנו ב-5:30 בלי שעון, פשוט מהאור. <strong>ישבנו עם קפה על המרפסת ואף אחד מאיתנו לא דיבר עשר דקות.</strong> זה הזמן הכי ארוך שלא הסתכלנו בטלפון מאז החתונה.</p>
+            <footer><span class="avatar" aria-hidden="true">נר</span><span><b>נועה ר.</b>, חיפה<br><small>סוויטת שחר · מרץ 2026</small></span></footer>
+            <p class="host-reply">תודה נועה! הקפה הבא עלינו. <span>· מאיה</span></p>
+          </article>
+
+          <article class="review reveal">
+            <p><strong>הדרך למעלה קצת מפחידה בחושך</strong>, תגיעו לפני השקיעה. חוץ מזה הכל היה מושלם.</p>
+            <footer><span class="avatar" aria-hidden="true">אב</span><span><b>אורי ב.</b>, רמת גן<br><small>סוויטת סלע · ינואר 2026</small></span></footer>
+          </article>
+
+          <article class="review reveal">
+            <p>באנו עם שני ילדים, בני 6 ו-9, וקצת חששנו מהשקט. בסוף הם אלה שלא רצו לעזוב. <strong>עידו השאיר להם פנס ומפה לשביל הזריחה,</strong> והם קמו לבד ב-5 בבוקר. המטבח ביחידת מלח מאובזר באמת, בישלנו כל ערב.</p>
+            <footer><span class="avatar" aria-hidden="true">של</span><span><b>שירן ל.</b>, מודיעין<br><small>יחידת מלח · אוקטובר 2025</small></span></footer>
+            <p class="host-reply">הפנס מחכה להם לביקור הבא. <span>· עידו</span></p>
+          </article>
+
+          <article class="review reveal" lang="en" dir="ltr">
+            <p>We came for the Dead Sea and stayed for the pool. <strong>Swimming at sunset with the whole valley below us felt unreal.</strong> Maya's tips for Masada at dawn were spot on.</p>
+            <p class="translation" lang="he" dir="rtl">"באנו בשביל ים המלח ונשארנו בשביל הבריכה. לשחות בשקיעה עם כל העמק מתחתינו הרגיש לא אמיתי."</p>
+            <footer><span class="avatar" aria-hidden="true">LK</span><span><b>Lena K.</b>, Hamburg<br><small>Shachar Suite · February 2026</small></span></footer>
+          </article>
+
+          <article class="review reveal">
+            <img src="assets/img/review-kids.jpg" width="1200" height="905" alt="שני ילדים מגב יושבים על קצה המרפסת מול השקיעה" loading="lazy" class="review-photo">
+            <p>הילדים ישבו ככה חצי שעה. בבית הם לא יושבים ככה חצי דקה.</p>
+            <footer><span class="avatar" aria-hidden="true">דמ</span><span><b>דנה מ.</b>, כפר סבא<br><small>יחידת מלח · אפריל 2026</small></span></footer>
+          </article>
+
+          <article class="review reveal">
+            <p>חגגנו 35 שנות נישואים. <strong>מאיה קישטה את החצר בנרות בלי שביקשנו</strong>, כנראה ראתה בהזמנה. ה-WiFi חלש ביחידת סלע, ובדיעבד זה היה הדבר הכי טוב שקרה לנו.</p>
+            <footer><span class="avatar" aria-hidden="true">יש</span><span><b>יוסי ש.</b>, ירושלים<br><small>סוויטת סלע · נובמבר 2025</small></span></footer>
+          </article>
+        </div>
+        <p class="section-cta"><a href="reviews.html" class="link-arrow">לכל חוות הדעת</a></p>
+      </div>
+    </section>
+
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta" aria-labelledby="finalTitle">
+      <img src="assets/img/day-pool.jpg" width="1200" height="1200" alt="" loading="lazy" class="final-img">
+      <div class="final-content wrap">
+        <h2 id="finalTitle" class="h2">הזריחה הבאה<br>כבר ביומן.</h2>
+        <p>בודקים תאריכים ומזמינים בכמה דקות.</p>
+        <a href="#book" class="btn btn-primary">בדיקת זמינות</a>
+        <a href="https://wa.me/972525550142" class="link-light">יש שאלה? כתבו לנו בוואטסאפ</a>
+      </div>
+    </section>
+  </main>
+  <div id="layout-footer"></div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js?v=6"></script>
+</body>
+</html>

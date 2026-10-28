@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Tzuk</title>
+  <meta name="description" content="Talk to us on WhatsApp, by phone or by email. We usually reply within the hour.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;400&family=Assistant:wght@300;400;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css?v=13">
+  <link rel="stylesheet" href="../css/pages.css?v=3">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="contact">
+  <div id="layout-header"></div>
+  <main id="main">
+    <section class="page-hero" aria-labelledby="pageTitle">
+      <div class="wrap page-hero-copy">
+        <ol class="crumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Contact</li></ol>
+        <p class="depth-tag"><span class="depth-num" dir="ltr">−040</span><span class="depth-unit">m</span><span class="depth-label">Contact</span></p>
+        <h1 id="pageTitle" class="h1">Talk to us.</h1>
+        <p class="lead">We answer on WhatsApp, usually within the hour.</p>
+      </div>
+    </section>    <section class="section-sm" style="padding-top:0" aria-label="Contact channels and form">
+      <div class="wrap contact-grid">
+        <ul class="channels">
+          <li><a href="https://wa.me/972525550142"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6A8.4 8.4 0 0 1 7.6 19L3 20.5l1.5-4.4A8.4 8.4 0 1 1 20 11.6z"/></svg><span><b>WhatsApp</b><small>The fastest way</small></span></a></li>
+          <li><a href="tel:+97225550142"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><b>+972 2-555-0142</b><small>Sun to Thu, 9:00 to 20:00 (Israel time)</small></span></a></li>
+          <li><a href="mailto:stay@tzuk.co.il"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><b>stay@tzuk.co.il</b><small>Groups and special requests</small></span></a></li>
+          <li><a href="guest-info.html#arrive"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>Metzoke Dragot, Dead Sea</b><small>Directions</small></span></a></li>
+        </ul>
+        <div class="note-card">
+          <form data-local-form novalidate aria-labelledby="formTitle">
+            <h2 id="formTitle" class="h3" style="margin-bottom:18px">Leave your details and we'll get back to you.</h2>
+            <div class="form-grid">
+              <div class="form-field"><label for="cName">Full name</label><input id="cName" name="name" autocomplete="name" required><span class="err">Please enter your name.</span></div>
+              <div class="form-field"><label for="cPhone">Phone</label><input id="cPhone" name="phone" type="tel" autocomplete="tel" required><span class="err">Please enter a valid phone number.</span></div>
+              <div class="form-field full"><label for="cEmail">Email</label><input id="cEmail" name="email" type="email" autocomplete="email" required><span class="err">Please enter a valid email.</span></div>
+              <div class="form-field full"><label for="cDates">Preferred dates (optional)</label><input id="cDates" name="dates" placeholder="e.g. the weekend of November 14"></div>
+              <div class="form-field full"><label for="cMsg">Message</label><textarea id="cMsg" name="message" required></textarea><span class="err">Please write us a few words.</span></div>
+            </div>
+            <div class="step-actions"><button type="submit" class="btn btn-primary">Send</button></div>
+          </form>
+          <div class="success-box" hidden tabindex="-1" role="status"><h2 class="h2">Got it!</h2><p>We'll get back to you by this evening. If it's urgent, WhatsApp is fastest.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="layout-footer"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="../js/main.js?v=6"></script>
+</body>
+</html>

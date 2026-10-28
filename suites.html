@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>היחידות שלנו · צוק</title>
+  <meta name="description" content="שלוש יחידות אירוח על שפת מצוקי דרגות: סוויטה זוגית, יחידה משפחתית וסוויטת אבן. בודקים זמינות ומחיר לתאריכים שלכם.">
+  <link rel="preload" href="fonts/fbtubic-sanscon-extralightwebfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="stylesheet" href="css/pages.css?v=3">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="suites" data-module="suites">
+  <div id="layout-header"></div>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="pageTitle">
+      <div class="wrap page-hero-copy">
+        <ol class="crumbs"><li><a href="index.html">דף הבית</a></li><li aria-current="page">היחידות</li></ol>
+        <p class="depth-tag"><span class="depth-num" dir="ltr">−040</span><span class="depth-unit">מ'</span><span class="depth-label">היחידות</span></p>
+        <h1 id="pageTitle" class="h1">היחידות שלנו.</h1>
+        <p class="lead">שלוש יחידות על שפת הצוק. לכל אחת נוף לים המלח וגישה לבריכה.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <form class="booking-bar booking-bar-inline" id="suitesBar" action="book.html" method="get" aria-label="בדיקת זמינות לכל היחידות" data-range>
+        <div class="field">
+          <span class="field-label" id="sLblIn">הגעה</span>
+          <button type="button" class="dp-trigger" data-role="checkin" aria-labelledby="sLblIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button>
+          <input type="hidden" name="checkin">
+        </div>
+        <div class="field">
+          <span class="field-label" id="sLblOut">עזיבה</span>
+          <button type="button" class="dp-trigger" data-role="checkout" aria-labelledby="sLblOut"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button>
+          <input type="hidden" name="checkout">
+        </div>
+        <div class="field">
+          <label for="sGuests">אורחים</label>
+          <select id="sGuests" name="guests">
+            <option value="1">אורח אחד</option><option value="2" selected>2 אורחים</option><option value="3">3 אורחים</option><option value="4">4 אורחים</option><option value="5">5 אורחים</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">להזמנה</button>
+      </form>
+    </div>
+
+    <section class="section-sm" aria-label="שלוש היחידות">
+      <div class="wrap zigzag">
+        <article class="zz-row reveal" data-unit="shachar">
+          <a href="suite.html?u=shachar" class="zz-media"><img src="assets/img/suite-shachar.jpg" width="1200" height="905" alt="סוויטת שחר: מיטה מול חלון זכוכית וג'קוזי במרפסת מול הזריחה" loading="lazy"></a>
+          <div class="zz-text">
+            <p class="depth-tag"><span class="depth-label">סוויטה זוגית</span></p>
+            <h2 class="h2">שחר</h2>
+            <p>הסוויטה הכי קרובה לשפת הצוק. חלון ענק מזרחה, ג'קוזי מחומם במרפסת, וזריחה שנכנסת ישר למיטה.</p>
+            <ul class="facts"><li>עד <bdi>2</bdi> אורחים</li><li><bdi>45</bdi> מ"ר</li><li>מיטה זוגית רחבה</li><li>נוף ישיר לים</li></ul>
+            <p class="price-line" data-price>החל מ-<bdi>₪1,450</bdi> ללילה</p>
+            <div class="btn-row"><a href="suite.html?u=shachar" class="btn btn-ghost">לפרטים</a><a href="book.html?unit=shachar" class="btn btn-primary" data-book>בדיקת זמינות</a></div>
+          </div>
+        </article>
+        <article class="zz-row reveal" data-unit="melach">
+          <a href="suite.html?u=melach" class="zz-media"><img src="assets/img/suite-melach.jpg" width="1200" height="905" alt="יחידת מלח: סלון מרווח עם מטבח וחלונות לים המלח" loading="lazy"></a>
+          <div class="zz-text">
+            <p class="depth-tag"><span class="depth-label">יחידה משפחתית</span></p>
+            <h2 class="h2">מלח</h2>
+            <p>שני חדרי שינה, מטבח מלא ומרפסת מוצלת עם שולחן ארוך. מקום לכל המשפחה, והבריכה במרחק עשרים צעדים.</p>
+            <ul class="facts"><li>עד <bdi>5</bdi> אורחים</li><li><bdi>70</bdi> מ"ר</li><li>2 חדרי שינה</li><li>מטבח מלא</li></ul>
+            <p class="price-line" data-price>החל מ-<bdi>₪1,650</bdi> ללילה</p>
+            <div class="btn-row"><a href="suite.html?u=melach" class="btn btn-ghost">לפרטים</a><a href="book.html?unit=melach" class="btn btn-primary" data-book>בדיקת זמינות</a></div>
+          </div>
+        </article>
+        <article class="zz-row reveal" data-unit="sela">
+          <a href="suite.html?u=sela" class="zz-media"><img src="assets/img/suite-sela.jpg" width="1200" height="905" alt="סוויטת סלע: חצר פנימית עם מקלחת חוץ ועץ זית" loading="lazy"></a>
+          <div class="zz-text">
+            <p class="depth-tag"><span class="depth-label">סוויטת אבן</span></p>
+            <h2 class="h2">סלע</h2>
+            <p>בנויה מאבן גיר מקומית, עם חצר פנימית פרטית, עץ זית ותיק ומקלחת חוץ. קרירה גם באוגוסט ושקטה תמיד.</p>
+            <ul class="facts"><li>עד <bdi>4</bdi> אורחים</li><li><bdi>55</bdi> מ"ר</li><li>חצר פרטית</li><li>אמבט אבן</li></ul>
+            <p class="price-line" data-price>החל מ-<bdi>₪1,350</bdi> ללילה</p>
+            <div class="btn-row"><a href="suite.html?u=sela" class="btn btn-ghost">לפרטים</a><a href="book.html?unit=sela" class="btn btn-primary" data-book>בדיקת זמינות</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compareTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−090</span><span class="depth-unit">מ'</span><span class="depth-label">השוואה</span></p>
+          <h2 id="compareTitle" class="h2">מה מתאים לכם?</h2>
+        </header>
+        <div class="compare-wrap">
+          <table class="compare">
+            <thead><tr><td></td><th scope="col">שחר</th><th scope="col">מלח</th><th scope="col">סלע</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">אורחים</th><td>עד <bdi>2</bdi></td><td>עד <bdi>5</bdi></td><td>עד <bdi>4</bdi></td></tr>
+              <tr><th scope="row">גודל</th><td><bdi>45</bdi> מ"ר</td><td><bdi>70</bdi> מ"ר</td><td><bdi>55</bdi> מ"ר</td></tr>
+              <tr><th scope="row">מיטות</th><td>זוגית</td><td>זוגית + 2 יחיד + ספה</td><td>זוגית + ספה</td></tr>
+              <tr><th scope="row">מטבח</th><td>מטבחון</td><td class="yes">מטבח מלא</td><td>מטבחון</td></tr>
+              <tr><th scope="row">ג'קוזי</th><td class="yes">במרפסת</td><td>לא</td><td>לא</td></tr>
+              <tr><th scope="row">חצר פרטית</th><td>לא</td><td>לא</td><td class="yes">כן, עם מקלחת חוץ</td></tr>
+              <tr><th scope="row">מתאים לילדים</th><td>לא</td><td class="yes">כן</td><td>מגיל 10</td></tr>
+              <tr><th scope="row">סל בוקר</th><td class="yes">כלול</td><td>בתוספת</td><td class="yes">כלול</td></tr>
+              <tr><th scope="row">אמצע שבוע / סוף שבוע</th><td><bdi>₪1,450</bdi> / <bdi>₪1,850</bdi></td><td><bdi>₪1,650</bdi> / <bdi>₪2,150</bdi></td><td><bdi>₪1,350</bdi> / <bdi>₪1,750</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="ctaTitle">
+      <div class="wrap">
+        <h2 id="ctaTitle" class="h2">לא בטוחים מה לבחור?</h2>
+        <p>ספרו לנו מי מגיע ומתי, ונמליץ על היחידה שהכי מתאימה לכם.</p>
+        <div class="btn-row"><a href="https://wa.me/972525550142" class="btn btn-primary">כתבו לנו בוואטסאפ</a><a href="contact.html" class="btn btn-ghost">טופס פנייה</a></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="layout-footer"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js?v=6"></script>
+</body>
+</html>

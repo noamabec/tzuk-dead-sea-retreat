@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>הזמנה · צוק</title>
+  <meta name="description" content="בודקים תאריכים, בוחרים יחידה ותוספות, ומזמינים את השהות בצוק.">
+  <meta name="robots" content="noindex">
+  <link rel="preload" href="fonts/fbtubic-sanscon-extralightwebfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="stylesheet" href="css/pages.css?v=3">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="book" data-module="book">
+  <div id="layout-header"></div>
+  <main id="main">
+    <section class="page-hero" aria-labelledby="pageTitle" style="padding-bottom:32px">
+      <div class="wrap page-hero-copy">
+        <ol class="crumbs"><li><a href="index.html">דף הבית</a></li><li aria-current="page">הזמנה</li></ol>
+        <h1 id="pageTitle" class="h1">הזמנה.</h1>
+      </div>
+    </section>
+
+    <div class="wrap book-layout" id="bookRoot">
+      <div class="book-steps">
+        <ol class="progress-steps" aria-label="שלבי ההזמנה">
+          <li data-step-label="1">תאריכים</li><li data-step-label="2">יחידה</li><li data-step-label="3">תוספות</li><li data-step-label="4">פרטים</li>
+        </ol>
+
+        <section class="step-panel" data-step="1" aria-labelledby="s1Title">
+          <h2 id="s1Title" class="h2" tabindex="-1">מתי מגיעים?</h2>
+          <p class="lead">בסופי שבוע (שישי ושבת) אפשר להזמין מ-2 לילות.</p>
+          <form id="bookDates" data-range novalidate>
+            <div class="step-dates">
+              <div class="field"><span class="field-label" id="bIn">הגעה</span><button type="button" class="dp-trigger" data-role="checkin" aria-labelledby="bIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button><input type="hidden" name="checkin"></div>
+              <div class="field"><span class="field-label" id="bOut">עזיבה</span><button type="button" class="dp-trigger" data-role="checkout" aria-labelledby="bOut"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button><input type="hidden" name="checkout"></div>
+              <div class="field"><label class="field-label" for="bAdults">מבוגרים</label><select id="bAdults" name="adults"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+              <div class="field"><label class="field-label" for="bKids">ילדים</label><select id="bKids" name="kids"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+            </div>
+          </form>
+          <p class="card-msg" id="s1Msg" role="alert"></p>
+          <div class="step-actions"><span></span><button type="button" class="btn btn-primary" data-next>המשך לבחירת יחידה</button></div>
+        </section>
+
+        <section class="step-panel" data-step="2" aria-labelledby="s2Title" hidden>
+          <h2 id="s2Title" class="h2" tabindex="-1">איזו יחידה?</h2>
+          <p class="lead" id="s2Lead"></p>
+          <div class="unit-options" id="unitOptions"></div>
+          <p class="card-msg" id="s2Msg" role="alert"></p>
+          <div class="step-actions"><button type="button" class="btn-back" data-back>חזרה לתאריכים</button><button type="button" class="btn btn-primary" data-next>המשך לתוספות</button></div>
+        </section>
+
+        <section class="step-panel" data-step="3" aria-labelledby="s3Title" hidden>
+          <h2 id="s3Title" class="h2" tabindex="-1">משהו להוסיף?</h2>
+          <p class="lead">אפשר לדלג, ואפשר גם להוסיף אחר כך בוואטסאפ.</p>
+          <div class="addon-options" id="addonOptions"></div>
+          <div class="step-actions"><button type="button" class="btn-back" data-back>חזרה ליחידות</button><button type="button" class="btn btn-primary" data-next>המשך לפרטים</button></div>
+        </section>
+
+        <section class="step-panel" data-step="4" aria-labelledby="s4Title" hidden>
+          <h2 id="s4Title" class="h2" tabindex="-1">כמעט סיימנו.</h2>
+          <p class="lead">הפרטים משמשים רק לאישור ההזמנה ולהוראות ההגעה.</p>
+          <form id="guestForm" novalidate>
+            <div class="form-grid">
+              <div class="form-field"><label for="gName">שם מלא</label><input id="gName" name="name" autocomplete="name" required><span class="err">כתבו את שמכם.</span></div>
+              <div class="form-field"><label for="gPhone">טלפון</label><input id="gPhone" name="phone" type="tel" autocomplete="tel" dir="ltr" required><span class="err">מספר טלפון לא תקין.</span></div>
+              <div class="form-field"><label for="gEmail">אימייל</label><input id="gEmail" name="email" type="email" autocomplete="email" dir="ltr" required><span class="err">כתובת אימייל לא תקינה.</span></div>
+              <div class="form-field"><label for="gTime">שעת הגעה משוערת</label><select id="gTime" name="time"><option>15:00–17:00</option><option selected>17:00–19:00</option><option>19:00–21:00</option><option>אחרי 21:00</option></select></div>
+              <div class="form-field full"><label for="gNotes">בקשות מיוחדות (לא חובה)</label><textarea id="gNotes" name="notes" placeholder="יום הולדת, אלרגיה, שעת סל בוקר מועדפת…"></textarea></div>
+              <div class="form-field full"><label class="check"><input type="checkbox" id="gTerms" name="terms" required>קראתי ואני מסכים/ה ל<a href="terms.html" target="_blank">תקנון ולמדיניות הביטולים</a></label><span class="err">צריך לאשר את התקנון כדי להמשיך.</span></div>
+            </div>
+          </form>
+          <div class="step-actions"><button type="button" class="btn-back" data-back>חזרה לתוספות</button><button type="button" class="btn btn-primary" data-pay>לתשלום</button></div>
+        </section>
+
+        <section class="step-panel" data-step="5" aria-labelledby="s5Title" hidden>
+          <div class="pay-state" id="payState" tabindex="-1"></div>
+        </section>
+      </div>
+
+      <aside class="summary" aria-labelledby="sumTitle" aria-live="polite">
+        <img id="sumImg" src="assets/img/hero-pool.jpg" width="2048" height="1152" alt="">
+        <div class="sum-body">
+          <h2 id="sumTitle">סיכום ההזמנה</h2>
+          <div id="sumContent"><p class="sum-empty">בחרו תאריכים כדי להתחיל.</p></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <div id="layout-footer"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js?v=6"></script>
+</body>
+</html>

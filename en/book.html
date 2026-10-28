@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book · Tzuk</title>
+  <meta name="description" content="Choose dates, a unit and add-ons, and book your stay at Tzuk.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;400&family=Assistant:wght@300;400;600&display=swap">
+  <link rel="stylesheet" href="../css/styles.css?v=13">
+  <link rel="stylesheet" href="../css/pages.css?v=3">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="book" data-module="book">
+  <div id="layout-header"></div>
+  <main id="main">
+    <section class="page-hero" aria-labelledby="pageTitle" style="padding-bottom:32px">
+      <div class="wrap page-hero-copy">
+        <ol class="crumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Book</li></ol>
+        <h1 id="pageTitle" class="h1">Book your stay.</h1>
+      </div>
+    </section>
+
+    <div class="wrap book-layout" id="bookRoot">
+      <div class="book-steps">
+        <ol class="progress-steps" aria-label="Booking steps">
+          <li data-step-label="1">Dates</li><li data-step-label="2">Unit</li><li data-step-label="3">Add-ons</li><li data-step-label="4">Details</li>
+        </ol>
+
+        <section class="step-panel" data-step="1" aria-labelledby="s1Title">
+          <h2 id="s1Title" class="h2" tabindex="-1">When are you coming?</h2>
+          <p class="lead">Weekend stays (Friday and Saturday nights) are 2 nights minimum.</p>
+          <form id="bookDates" data-range novalidate>
+            <div class="step-dates">
+              <div class="field"><span class="field-label" id="bIn">Arrival</span><button type="button" class="dp-trigger" data-role="checkin" aria-labelledby="bIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button><input type="hidden" name="checkin"></div>
+              <div class="field"><span class="field-label" id="bOut">Departure</span><button type="button" class="dp-trigger" data-role="checkout" aria-labelledby="bOut"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button><input type="hidden" name="checkout"></div>
+              <div class="field"><label class="field-label" for="bAdults">Adults</label><select id="bAdults" name="adults"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+              <div class="field"><label class="field-label" for="bKids">Children</label><select id="bKids" name="kids"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+            </div>
+          </form>
+          <p class="card-msg" id="s1Msg" role="alert"></p>
+          <div class="step-actions"><span></span><button type="button" class="btn btn-primary" data-next>Continue to units</button></div>
+        </section>
+
+        <section class="step-panel" data-step="2" aria-labelledby="s2Title" hidden>
+          <h2 id="s2Title" class="h2" tabindex="-1">Which unit?</h2>
+          <p class="lead" id="s2Lead"></p>
+          <div class="unit-options" id="unitOptions"></div>
+          <p class="card-msg" id="s2Msg" role="alert"></p>
+          <div class="step-actions"><button type="button" class="btn-back" data-back>Back to dates</button><button type="button" class="btn btn-primary" data-next>Continue to add-ons</button></div>
+        </section>
+
+        <section class="step-panel" data-step="3" aria-labelledby="s3Title" hidden>
+          <h2 id="s3Title" class="h2" tabindex="-1">Anything to add?</h2>
+          <p class="lead">You can skip this, or add things later on WhatsApp.</p>
+          <div class="addon-options" id="addonOptions"></div>
+          <div class="step-actions"><button type="button" class="btn-back" data-back>Back to units</button><button type="button" class="btn btn-primary" data-next>Continue to details</button></div>
+        </section>
+
+        <section class="step-panel" data-step="4" aria-labelledby="s4Title" hidden>
+          <h2 id="s4Title" class="h2" tabindex="-1">Almost there.</h2>
+          <p class="lead">We use your details only to confirm the booking and send directions.</p>
+          <form id="guestForm" novalidate>
+            <div class="form-grid">
+              <div class="form-field"><label for="gName">Full name</label><input id="gName" name="name" autocomplete="name" required><span class="err">Please enter your name.</span></div>
+              <div class="form-field"><label for="gPhone">Phone</label><input id="gPhone" name="phone" type="tel" autocomplete="tel" required><span class="err">Please enter a valid phone number.</span></div>
+              <div class="form-field"><label for="gEmail">Email</label><input id="gEmail" name="email" type="email" autocomplete="email" required><span class="err">Please enter a valid email.</span></div>
+              <div class="form-field"><label for="gTime">Estimated arrival</label><select id="gTime" name="time"><option>15:00–17:00</option><option selected>17:00–19:00</option><option>19:00–21:00</option><option>After 21:00</option></select></div>
+              <div class="form-field full"><label for="gNotes">Special requests (optional)</label><textarea id="gNotes" name="notes" placeholder="A birthday, an allergy, a preferred breakfast time…"></textarea></div>
+              <div class="form-field full"><label class="check"><input type="checkbox" id="gTerms" name="terms" required>I've read and accept the <a href="terms.html" target="_blank">terms and cancellation policy</a></label><span class="err">Please accept the terms to continue.</span></div>
+            </div>
+          </form>
+          <div class="step-actions"><button type="button" class="btn-back" data-back>Back to add-ons</button><button type="button" class="btn btn-primary" data-pay>Continue to payment</button></div>
+        </section>
+
+        <section class="step-panel" data-step="5" aria-labelledby="s5Title" hidden>
+          <div class="pay-state" id="payState" tabindex="-1"></div>
+        </section>
+      </div>
+
+      <aside class="summary" aria-labelledby="sumTitle" aria-live="polite">
+        <img id="sumImg" src="../assets/img/hero-pool.jpg" width="2048" height="1152" alt="">
+        <div class="sum-body">
+          <h2 id="sumTitle">Your booking</h2>
+          <div id="sumContent"><p class="sum-empty">Choose dates to get started.</p></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <div id="layout-footer"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="../js/main.js?v=6"></script>
+</body>
+</html>

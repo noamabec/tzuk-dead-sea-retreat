@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tzuk · A cliff-top retreat above the Dead Sea</title>
+  <meta name="description" content="Three units on the edge of the Metzoke Dragot cliffs, an infinity pool above the Dead Sea and a sunrise over the mountains of Moab. Check dates and book online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;400&family=Assistant:wght@300;400;600&display=swap">
+  <link rel="preload" href="../assets/img/hero-pool.jpg" as="image">
+  <link rel="stylesheet" href="../css/styles.css?v=13">
+  <link rel="stylesheet" href="../css/pages.css?v=3">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="home">
+  <div id="layout-header"></div>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-media">
+        <img src="../assets/img/hero-pool.jpg" width="2048" height="1152" alt="Tzuk's infinity pool at sunrise, with the Dead Sea and the mountains of Moab below" class="hero-img">
+      </div>
+      <div class="hero-content wrap">
+        <p class="coords"><span dir="ltr">31°35′N  35°23′E</span><span>Metzoke Dragot, 400 meters above the Dead Sea</span></p>
+        <h1 id="heroTitle" class="h1"><span>A retreat on the cliff,</span><span>above the <em>Dead Sea</em>.</span></h1>
+        <p class="lead">Three units, one pool facing the view, and a sunrise over the mountains of Moab.</p>
+      </div>
+    </section>
+
+    <form class="booking-bar" id="book" action="book.html" method="get" aria-label="Check availability" data-range>
+      <div class="field">
+        <span class="field-label" id="lblCheckin">Arrival</span>
+        <button type="button" class="dp-trigger" id="checkin" data-role="checkin" aria-labelledby="lblCheckin checkin"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button>
+        <input type="hidden" name="checkin">
+      </div>
+      <div class="field">
+        <span class="field-label" id="lblCheckout">Departure</span>
+        <button type="button" class="dp-trigger" id="checkout" data-role="checkout" aria-labelledby="lblCheckout checkout"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span class="dp-value"></span></button>
+        <input type="hidden" name="checkout">
+      </div>
+      <div class="field">
+        <label for="guests">Guests</label>
+        <select id="guests" name="guests">
+          <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check availability</button>
+      <a href="#suites" class="link-secondary">Meet the suites</a>
+    </form>
+
+    <ul class="trust-strip wrap" aria-label="About the compound">
+      <li>Only 3 units</li>
+      <li>Heated infinity pool</li>
+      <li>20 minutes from Ein Gedi</li>
+    </ul>
+
+    <section class="promise" aria-labelledby="promiseTitle">
+      <img src="../assets/img/view-wide.jpg" width="1456" height="736" alt="The view from the top of Metzoke Dragot down to the Dead Sea" class="promise-img" loading="lazy">
+      <div class="promise-content wrap">
+        <h2 id="promiseTitle" class="h2 reveal">Here the sea lies <em>below</em> your feet,<br>and the quiet above everything.</h2>
+        <dl class="promise-stats">
+          <div><dt>above the sea</dt><dd><bdi>400</bdi> m</dd></div>
+          <div><dt>units</dt><dd>3</dd></div>
+          <div><dt>pool facing the view</dt><dd>1</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section suites" id="suites" aria-labelledby="suitesTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−060</span><span class="depth-unit">m</span><span class="depth-label">Suites</span></p>
+          <h2 id="suitesTitle" class="h2">Three units, no two alike.</h2>
+        </header>
+        <div class="suite-grid">
+          <article class="suite-card reveal">
+            <a href="suite.html?u=shachar" class="suite-media"><img src="../assets/img/suite-shachar.jpg" width="1200" height="905" alt="Shachar suite: a bed facing a glass wall and a terrace jacuzzi at sunrise" loading="lazy"><span class="suite-name">Shachar</span></a>
+            <div class="suite-body">
+              <p class="suite-tag">A suite for two, closest to the cliff edge</p>
+              <ul class="suite-facts"><li>Sleeps 2</li><li>45 m²</li><li>Terrace jacuzzi</li></ul>
+              <p class="suite-price">From <bdi>₪1,450</bdi> a night</p>
+              <a href="suite.html?u=shachar" class="btn btn-ghost">Details</a>
+            </div>
+          </article>
+          <article class="suite-card reveal">
+            <a href="suite.html?u=melach" class="suite-media"><img src="../assets/img/suite-melach.jpg" width="1200" height="905" alt="Melach unit: a roomy living room with a kitchen and windows to the Dead Sea" loading="lazy"><span class="suite-name">Melach</span></a>
+            <div class="suite-body">
+              <p class="suite-tag">A roomy family unit with a full kitchen</p>
+              <ul class="suite-facts"><li>Sleeps 5</li><li>70 m²</li><li>2 bedrooms</li></ul>
+              <p class="suite-price">From <bdi>₪1,650</bdi> a night</p>
+              <a href="suite.html?u=melach" class="btn btn-ghost">Details</a>
+            </div>
+          </article>
+          <article class="suite-card reveal">
+            <a href="suite.html?u=sela" class="suite-media"><img src="../assets/img/suite-sela.jpg" width="1200" height="905" alt="Sela suite: a private courtyard with an outdoor shower and an olive tree" loading="lazy"><span class="suite-name">Sela</span></a>
+            <div class="suite-body">
+              <p class="suite-tag">A stone suite with a courtyard and outdoor shower</p>
+              <ul class="suite-facts"><li>Sleeps 4</li><li>55 m²</li><li>Private courtyard</li></ul>
+              <p class="suite-price">From <bdi>₪1,350</bdi> a night</p>
+              <a href="suite.html?u=sela" class="btn btn-ghost">Details</a>
+            </div>
+          </article>
+        </div>
+        <p class="section-cta"><a href="suites.html" class="link-arrow">Compare the units</a></p>
+      </div>
+    </section>
+
+    <section class="section compound" id="compound" aria-labelledby="compoundTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−120</span><span class="depth-unit">m</span><span class="depth-label">The compound</span></p>
+          <h2 id="compoundTitle" class="h2">One pool. <em>The whole sea.</em></h2>
+          <p class="section-lead">Three and a half acres on the cliff edge. Three units that each stand on their own, and in the middle the pool looking out over the Dead Sea.</p>
+        </header>
+        <figure class="aerial reveal">
+          <img src="../assets/img/compound-aerial.jpg" width="2048" height="1152" alt="Drone photo of the compound: three stone units and an infinity pool on the cliff edge" loading="lazy">
+          <a class="hotspot" href="suite.html?u=shachar" style="--x:17%;--y:30%"><span class="hs-dot" aria-hidden="true"></span><span class="hs-label">Shachar</span></a>
+          <a class="hotspot" href="suite.html?u=sela" style="--x:27%;--y:62%"><span class="hs-dot" aria-hidden="true"></span><span class="hs-label">Sela</span></a>
+          <a class="hotspot" href="suite.html?u=melach" style="--x:71%;--y:66%"><span class="hs-dot" aria-hidden="true"></span><span class="hs-label">Melach</span></a>
+          <span class="hotspot hotspot-static" style="--x:59%;--y:36%"><span class="hs-dot" aria-hidden="true"></span><span class="hs-label">The pool</span></span>
+        </figure>
+        <ul class="amenities">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17c2 0 2-1.5 4-1.5S8 17 10 17s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 21c2 0 2-1.5 4-1.5S8 21 10 21s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M8 13V5a2 2 0 0 1 4 0M16 13V5a2 2 0 0 0-4 0M8 8h8"/></svg>Heated infinity pool</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 18h20M12 6v3M5 9l2 2M19 9l-2 2M7 18a5 5 0 0 1 10 0"/></svg>Shared sunrise terrace</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2 3 5 5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-7.5zM5 21h14"/></svg>Fire pit and stars</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 16V8h4a2.5 2.5 0 0 1 0 5H9"/></svg>Private parking</li>
+        </ul>
+        <p class="section-cta"><a href="compound.html" class="link-arrow">Tour the compound</a></p>
+      </div>
+    </section>
+
+    <section class="section hosts" id="hosts" aria-labelledby="hostsTitle">
+      <div class="wrap hosts-grid">
+        <figure class="hosts-media reveal"><img src="../assets/img/hosts.jpg" width="928" height="1152" alt="Maya and Ido, the hosts, on the terrace facing the cliff" loading="lazy"></figure>
+        <div class="hosts-text">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−170</span><span class="depth-unit">m</span><span class="depth-label">The hosts</span></p>
+          <h2 id="hostsTitle" class="h2">We built the place<br>we always <em>looked for</em>.</h2>
+          <p>Ten years ago we stood here for the first time, at half past five in the morning, and watched the sun rise over Moab. We spent three years building, stone by stone, and decided there would never be more than three units.</p>
+          <blockquote class="quote">"We want you to feel this place is yours, and that the quiet is part of the price."</blockquote>
+          <p class="signature">Maya &amp; Ido</p>
+          <a href="about.html" class="btn btn-ghost">Our story</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="day" id="day" aria-labelledby="dayTitle">
+      <div class="day-pin">
+        <div class="wrap day-inner">
+          <header class="day-head">
+            <p class="depth-tag"><span class="depth-num" dir="ltr">−220</span><span class="depth-unit">m</span><span class="depth-label">A day at Tzuk</span></p>
+            <h2 id="dayTitle" class="h2">This is a day with us.</h2>
+          </header>
+          <ol class="day-clock" aria-hidden="true"><li class="is-active">05:40</li><li>08:00</li><li>11:00</li><li>17:00</li><li>21:00</li></ol>
+          <div class="day-stage">
+            <article class="day-step is-active"><figure><img src="../assets/img/suite-shachar.jpg" width="1200" height="905" alt="Sunrise from the bed in the Shachar suite" loading="lazy"></figure><div class="day-text"><p class="day-time"><bdi>05:40</bdi></p><h3 class="h3">Sunrise from bed.</h3><p>No alarm clock needed. The light over Moab wakes you on its own.</p></div></article>
+            <article class="day-step"><figure><img src="../assets/img/day-breakfast.jpg" width="1200" height="1200" alt="A local breakfast basket on a stone terrace table" loading="lazy"></figure><div class="day-text"><p class="day-time"><bdi>08:00</bdi></p><h3 class="h3">Breakfast on the terrace.</h3><p>Village bread, goat cheese, dates and coffee, at your door at the time you chose.</p></div></article>
+            <article class="day-step"><figure><img src="../assets/img/day-sea.jpg" width="1200" height="1200" alt="White salt crystals on the Dead Sea shore" loading="lazy"></figure><div class="day-text"><p class="day-time"><bdi>11:00</bdi></p><h3 class="h3">Down to the sea.</h3><p>15 minutes to the beach, 20 to Ein Gedi. Back before the midday heat.</p></div></article>
+            <article class="day-step"><figure><img src="../assets/img/day-pool.jpg" width="1200" height="1200" alt="The pool at sunset with loungers" loading="lazy"></figure><div class="day-text"><p class="day-time"><bdi>17:00</bdi></p><h3 class="h3">The pool at sunset.</h3><p>The water is warm, the rock turns copper, and the valley below slips into shade.</p></div></article>
+            <article class="day-step"><figure><img src="../assets/img/night-fire.jpg" width="2048" height="1152" alt="The fire pit at night under the Milky Way" loading="lazy"></figure><div class="day-text"><p class="day-time"><bdi>21:00</bdi></p><h3 class="h3">Fire and stars.</h3><p>No city lights. Just the fire, the Milky Way, and the small lights of Jordan across the sea.</p></div></article>
+          </div>
+          <p class="day-cta"><a href="experiences.html" class="btn btn-ghost">Experiences &amp; add-ons</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section area" id="area" aria-labelledby="areaTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="depth-tag"><span class="depth-num" dir="ltr">−280</span><span class="depth-unit">m</span><span class="depth-label">The area</span></p>
+          <h2 id="areaTitle" class="h2">Everything is close, <em>except the noise</em>.</h2>
+        </header>
+      </div>
+      <div class="distance-row" tabindex="0" aria-label="Places nearby and drive times, scroll sideways">
+        <article class="place"><div class="place-media" aria-hidden="true"><img src="../assets/img/place-dragot.jpg" width="905" height="1200" alt="" loading="lazy"></div><div class="place-body"><p class="dist-min"><bdi>5</bdi><small>min drive</small></p><h3>Nahal Dragot</h3><p class="place-note">A cliff canyon, rappelling for the fit</p></div><button type="button" class="place-pin" aria-pressed="false" aria-label="Show photo: Nahal Dragot"><svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></article>
+        <article class="place"><div class="place-media" aria-hidden="true"><img src="../assets/img/place-beach.jpg" width="905" height="1200" alt="" loading="lazy"></div><div class="place-body"><p class="dist-min"><bdi>15</bdi><small>min drive</small></p><h3>Dead Sea beach</h3><p class="place-note">A public beach with showers</p></div><button type="button" class="place-pin" aria-pressed="false" aria-label="Show photo: Dead Sea beach"><svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></article>
+        <article class="place"><div class="place-media" aria-hidden="true"><img src="../assets/img/place-eingedi.jpg" width="905" height="1200" alt="" loading="lazy"></div><div class="place-body"><p class="dist-min"><bdi>20</bdi><small>min drive</small></p><h3>Ein Gedi</h3><p class="place-note">The nature reserve and springs</p></div><button type="button" class="place-pin" aria-pressed="false" aria-label="Show photo: David waterfall, Ein Gedi"><svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></article>
+        <article class="place"><div class="place-media" aria-hidden="true"><img src="../assets/img/exp-masada.jpg" width="1200" height="905" alt="" loading="lazy"></div><div class="place-body"><p class="dist-min"><bdi>35</bdi><small>min drive</small></p><h3>Masada</h3><p class="place-note">The Snake Path before sunrise</p></div><button type="button" class="place-pin" aria-pressed="false" aria-label="Show photo: sunrise at Masada"><svg class="i-pin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></article>
+      </div>
+      <p class="arrival wrap"><span class="arrival-label">Getting here</span><span>Jerusalem 60 min</span><span>Ben Gurion Airport 90 min</span><a href="guest-info.html" class="link-arrow">Directions</a></p>
+      <p class="drag-hint wrap" aria-hidden="true">Drag sideways</p>
+    </section>
+
+    <section class="section reviews" id="reviews" aria-labelledby="reviewsTitle">
+      <div class="wrap">
+        <header class="section-head reviews-head">
+          <div>
+            <p class="depth-tag"><span class="depth-num" dir="ltr">−330</span><span class="depth-unit">m</span><span class="depth-label">Guest reviews</span></p>
+            <h2 id="reviewsTitle" class="h2">What guests wrote to us.</h2>
+            <p class="section-lead">From the guest book and the messages we got after check-out.</p>
+          </div>
+          <div class="score" aria-label="Average rating 4.9 out of 5 from 112 reviews"><span class="score-num">4.9</span><span class="stars" aria-hidden="true">★★★★★</span><span class="score-meta">112 reviews</span></div>
+        </header>
+        <div class="review-grid">
+          <article class="review reveal" lang="en"><img src="../assets/img/review-coffee.jpg" width="1200" height="905" alt="Two coffee cups on the terrace railing facing the sunrise" loading="lazy" class="review-photo">
+            <p>We came for the Dead Sea and stayed for the pool. <strong>Swimming at sunset with the whole valley below us felt unreal.</strong> Maya's tips for Masada at dawn were spot on.</p>
+            <footer><span class="avatar" aria-hidden="true">LK</span><span><b>Lena K.</b>, Hamburg<br><small>Shachar suite · February 2026</small></span></footer></article>
+          <article class="review reveal"><p><strong>The road up is a bit scary in the dark</strong>, so arrive before sunset. Otherwise everything was perfect.</p>
+            <footer><span class="avatar" aria-hidden="true">UB</span><span><b>Uri B.</b>, Ramat Gan<br><small>Sela suite · January 2026</small></span></footer></article>
+          <article class="review reveal"><p>We came with two kids, 6 and 9, and were a little worried about the quiet. In the end they were the ones who didn't want to leave. <strong>Ido left them a flashlight and a map of the sunrise trail,</strong> and they got up on their own at 5 am. The kitchen at Melach is properly equipped; we cooked every evening.</p>
+            <footer><span class="avatar" aria-hidden="true">SL</span><span><b>Shiran L.</b>, Modi'in<br><small>Melach unit · October 2025</small></span></footer>
+            <p class="host-reply">The flashlight is waiting for their next visit. <span>· Ido</span></p></article>
+          <article class="review reveal"><p>The stone suite stays cool even at midday. <strong>Showering outside under the olive tree is something I will miss.</strong> Bring good shoes for Nahal Dragot.</p>
+            <footer><span class="avatar" aria-hidden="true">MD</span><span><b>Marc D.</b>, Lyon<br><small>Sela suite · March 2026</small></span></footer></article>
+          <article class="review reveal"><img src="../assets/img/review-kids.jpg" width="1200" height="905" alt="Two children seen from behind on the terrace edge at sunset" loading="lazy" class="review-photo">
+            <p>The kids sat like this for half an hour. At home they don't sit like this for half a minute.</p>
+            <footer><span class="avatar" aria-hidden="true">DM</span><span><b>Dana M.</b>, Kfar Saba<br><small>Melach unit · April 2026</small></span></footer></article>
+          <article class="review reveal"><p>We celebrated 35 years of marriage. <strong>Maya decorated the courtyard with candles without us asking</strong>, she must have seen it in the booking. The WiFi is weak at Sela, and in hindsight that was the best thing that happened to us.</p>
+            <footer><span class="avatar" aria-hidden="true">YS</span><span><b>Yossi S.</b>, Jerusalem<br><small>Sela suite · November 2025</small></span></footer>
+            <p class="host-reply">Thank you Yossi, see you at 36. <span>· Maya</span></p></article>
+        </div>
+        <p class="section-cta"><a href="reviews.html" class="link-arrow">All reviews</a></p>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="finalTitle">
+      <img src="../assets/img/day-pool.jpg" width="1200" height="1200" alt="" loading="lazy" class="final-img">
+      <div class="final-content wrap">
+        <h2 id="finalTitle" class="h2">The next sunrise<br>is already in the diary.</h2>
+        <p>Check dates and book in a few minutes.</p>
+        <a href="#book" class="btn btn-primary">Check availability</a>
+        <a href="https://wa.me/972525550142" class="link-light">Questions? Message us on WhatsApp</a>
+      </div>
+    </section>
+  </main>
+  <div id="layout-footer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="../js/main.js?v=6"></script>
+</body>
+</html>
