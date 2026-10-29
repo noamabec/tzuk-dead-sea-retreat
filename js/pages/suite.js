@@ -46,13 +46,14 @@ const L = {
 
 function planSVG(id, t) {
   // simple illustrative floor plans, drawn in the site's line style
-  const room = (x, y, w, h, label) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6"/><text x="${x + w / 2}" y="${y + h / 2 + 5}" text-anchor="middle">${label}</text>`;
+  // rooms share walls like a real plan; outdoor areas are dashed
+  const room = (x, y, w, h, label, out) => `<rect x="${x}" y="${y}" width="${w}" height="${h}"${out ? ' class="out"' : ''}/><text x="${x + w / 2}" y="${y + h / 2 + 3}" text-anchor="middle">${label}</text>`;
   const plans = {
-    shachar: room(10, 10, 230, 150, t.bedroom) + room(250, 10, 90, 80, t.bath) + room(250, 100, 90, 60, t.kitchen) + room(10, 170, 330, 70, t.terrace),
-    melach: room(10, 10, 160, 120, t.living) + room(180, 10, 160, 120, t.kitchen) + room(10, 140, 110, 100, t.bedroom) + room(130, 140, 110, 100, t.kids) + room(250, 140, 90, 100, t.bath),
-    sela: room(10, 10, 200, 140, t.bedroom) + room(220, 10, 120, 140, t.bath) + room(10, 160, 330, 80, t.court),
+    shachar: room(0, 0, 240, 160, t.bedroom) + room(240, 0, 100, 90, t.bath) + room(240, 90, 100, 70, t.kitchen) + room(0, 160, 340, 80, t.terrace, 1),
+    melach: room(0, 0, 170, 130, t.living) + room(170, 0, 170, 130, t.kitchen) + room(0, 130, 120, 110, t.bedroom) + room(120, 130, 120, 110, t.kids) + room(240, 130, 100, 110, t.bath),
+    sela: room(0, 0, 210, 150, t.bedroom) + room(210, 0, 130, 150, t.bath) + room(0, 150, 340, 90, t.court, 1),
   };
-  return `<svg viewBox="0 0 350 250" role="img" aria-label="${t.plan}"><g fill="none" stroke="#A64B25" stroke-width="1.4">${plans[id]}</g><style>text{fill:#6B5F55;stroke:none;font:500 13px var(--font-body)}</style></svg>`;
+  return `<svg viewBox="-2 -2 344 244" role="img" aria-label="${t.plan}"><g fill="none" stroke="#A64B25" stroke-width=".75">${plans[id]}</g><style>rect.out{stroke-dasharray:3 4;stroke:#C9A58E}text{fill:#6B5F55;stroke:none;font:400 9.5px var(--font-body);letter-spacing:.04em}</style></svg>`;
 }
 
 export function render({ lang }) {

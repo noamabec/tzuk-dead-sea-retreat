@@ -351,9 +351,9 @@ a.hotspot:hover .hs-label, a.hotspot:focus-visible .hs-label { background: var(-
 .sea-text { flex-basis: 100%; font-size: var(--fs-small); font-weight: 400; line-height: 1.5; opacity: .9; }
 
 /* ---------- floating ---------- */
-.fab-whatsapp { position: fixed; z-index: 40; inset-inline-end: clamp(16px, 4vw, 70px); bottom: 22px; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--salt); box-shadow: var(--shadow-deep), 0 0 0 1px rgba(244, 238, 228, .28); transition: transform .3s var(--ease); }
+.fab-whatsapp { position: fixed; z-index: 40; inset-inline-end: clamp(16px, 4vw, 70px); bottom: 22px; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: #25D366; color: #fff; box-shadow: var(--shadow-deep); transition: transform .3s var(--ease); }
 .fab-whatsapp:hover { transform: translateY(-2px); }
-.fab-whatsapp svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }
+.fab-whatsapp svg { width: 28px; height: 28px; fill: currentColor; }
 .a11y { position: fixed; z-index: 40; inset-inline-start: 16px; bottom: 22px; }
 .a11y-toggle { width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--salt); color: var(--ink); box-shadow: var(--shadow); cursor: pointer; display: grid; place-items: center; }
 .a11y-toggle svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }

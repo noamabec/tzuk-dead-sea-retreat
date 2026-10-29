@@ -51,8 +51,8 @@ export function rangePicker(host, opts = {}) {
   const scrim = document.createElement('div');
   scrim.className = 'dp-scrim';
   scrim.hidden = true;
-  host.append(panel);
-  document.body.append(scrim);
+  // lives on <body> so sticky / transformed parents can't clip or offset it
+  document.body.append(panel, scrim);
 
   function syncTriggers() {
     ['checkin', 'checkout'].forEach((role) => {
@@ -130,21 +130,54 @@ export function rangePicker(host, opts = {}) {
     focusIso = (role === 'checkout' ? checkout || checkin : checkin) || todayIso;
     view = new Date(parseISO(focusIso).getFullYear(), parseISO(focusIso).getMonth(), 1, 12);
     render();
-    // not enough room below (e.g. the hero booking bar)? bring the bar up under the header first
-    const rect = host.getBoundingClientRect();
-    if (!mobile() && window.innerHeight - rect.bottom < 480) {
-      const headerH = document.getElementById('siteHeader')?.offsetHeight || 76;
-      const y = window.scrollY + rect.top - headerH - 16;
-      if (window.__lenis) window.__lenis.scrollTo(y, { duration: 0.7 });
-      else window.scrollTo({ top: y, behavior: 'smooth' });
-    }
     panel.hidden = false;
+    // no spot that leaves the fields visible (a full-width bar mid-screen): bring the bar up under the header, then it opens below
+    const lift = place();
+    if (lift > 0) {
+      if (window.__lenis) window.__lenis.scrollTo(window.scrollY + lift, { duration: 0.6 });
+      else window.scrollTo({ top: window.scrollY + lift, behavior: 'smooth' });
+    }
+    if (!raf) raf = requestAnimationFrame(follow);
     scrim.hidden = !mobile();
     host.classList.add('dp-open');
     Object.values(triggers).forEach((b) => b.setAttribute('aria-expanded', 'true'));
     if (mobile()) window.__lenis?.stop();
     requestAnimationFrame(() => panel.querySelector(`[data-date="${focusIso}"]`)?.focus({ preventScroll: true }) || panel.querySelector('.dp-day:not([disabled])')?.focus({ preventScroll: true }));
   }
+  // desktop: fixed to the viewport next to the date fields; below if it fits, else above,
+  // else beside the form (the sticky booking card), else as high as the header allows
+  function place() {
+    panel.style.cssText = '';
+    if (mobile() || panel.hidden) return 0;
+    let covers = 0;
+    const a = triggers.checkin.getBoundingClientRect();
+    const b = triggers.checkout.getBoundingClientRect();
+    const top = Math.min(a.top, b.top); const bottom = Math.max(a.bottom, b.bottom);
+    const vw = document.documentElement.clientWidth; const vh = window.innerHeight;
+    const minTop = (document.getElementById('siteHeader')?.offsetHeight || 76) + 8;
+    if (bottom < minTop - 8 || top > vh) { close(false); return 0; } // fields scrolled away
+    const w = panel.offsetWidth; const h = panel.offsetHeight;
+    let y = bottom + 10;
+    let x = lang === 'he' ? Math.max(a.right, b.right) - w : Math.min(a.left, b.left);
+    if (y + h > vh - 12) {
+      if (top - 10 - h >= minTop) y = top - 10 - h;
+      else {
+        y = Math.min(Math.max(minTop, top - 60), vh - 12 - h);
+        y = Math.max(minTop, y);
+        const box = host.getBoundingClientRect();
+        if (box.right + 16 + w <= vw - 16) x = box.right + 16;
+        else if (box.left - 16 - w >= 16) x = box.left - 16 - w;
+        else covers = top - minTop;
+      }
+    }
+    x = Math.min(Math.max(16, x), vw - 16 - w);
+    panel.style.cssText = `position:fixed;top:${y}px;left:${x}px;right:auto;bottom:auto;max-height:${vh - y - 12}px;overflow-y:auto`;
+    return covers;
+  }
+  // follow the fields every frame while open (smooth scroll and parallax keep moving them after scroll events end)
+  let raf = 0;
+  const follow = () => { place(); raf = panel.hidden ? 0 : requestAnimationFrame(follow); };
+
   function close(returnFocus = true) {
     if (panel.hidden) return;
     panel.hidden = true; scrim.hidden = true;
@@ -214,7 +247,7 @@ export function rangePicker(host, opts = {}) {
     panel.querySelector(`[data-date="${next}"]`)?.focus({ preventScroll: true });
   });
   scrim.addEventListener('click', () => close());
-  document.addEventListener('pointerdown', (e) => { if (!panel.hidden && !host.contains(e.target) && !scrim.contains(e.target)) close(false); });
+  document.addEventListener('pointerdown', (e) => { if (!panel.hidden && !host.contains(e.target) && !panel.contains(e.target) && !scrim.contains(e.target)) close(false); });
 
   syncTriggers();
   return {

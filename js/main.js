@@ -1,7 +1,7 @@
 // צוק · Tzuk — interactions for every page.
 // The site is a descent: cliff top (hero) → sea (footer). The altimeter follows the scroll.
-import { renderLayout } from './layout.js';
-import { rangePicker } from './datepicker.js';
+import { renderLayout } from './layout.js?v=2';
+import { rangePicker } from './datepicker.js?v=3';
 
 const { lang, page } = renderLayout();
 const he = lang === 'he';
@@ -50,14 +50,41 @@ const altMark = document.getElementById('altMark');
 const altValue = document.getElementById('altValue');
 const altLabel = document.getElementById('altLabel');
 const progress = document.getElementById('scrollProgress');
+// the section depth tags ("−120 מ'") are the altimeter's keyframes: when a tag sits at 40% of the viewport
+// the altimeter reads exactly its number; between tags it interpolates, and the page end is the sea
+let altStops = null; let altFor = 0;
+function measureAlt() {
+  const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  const stops = [[0, 0]];
+  document.querySelectorAll('.depth-num').forEach((el) => {
+    const m = Number(el.textContent.replace(/[^\d]/g, ''));
+    const y = Math.min(max, Math.max(0, el.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.4));
+    const last = stops[stops.length - 1];
+    if (y <= 0 && stops.length === 1) stops[0] = [0, m]; // a tag already past the line on load: start there
+    else if (m > last[1] && m < ALT_BOTTOM && y > last[0]) stops.push([y, m]);
+  });
+  stops.push([Math.max(max, stops[stops.length - 1][0] + 1), ALT_BOTTOM]);
+  altStops = stops; altFor = document.documentElement.scrollHeight;
+}
+function depthAt(y) {
+  if (!altStops || altFor !== document.documentElement.scrollHeight) measureAlt();
+  for (let i = 1; i < altStops.length; i += 1) {
+    const [y1, m1] = altStops[i]; const [y0, m0] = altStops[i - 1];
+    if (y <= y1) return m0 + ((y - y0) / (y1 - y0)) * (m1 - m0);
+  }
+  return ALT_BOTTOM;
+}
+window.addEventListener('resize', () => { altStops = null; });
+window.addEventListener('load', () => { altStops = null; onScroll(); });
 function onScroll() {
   const y = window.scrollY;
   header.classList.toggle('is-solid', y > 40 || body.classList.contains('menu-open'));
   const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
   const p = Math.min(1, Math.max(0, y / max));
-  const metres = Math.round(p * ALT_BOTTOM);
-  altMark.style.top = `${p * 100}%`;
-  altLabel.style.top = `${p * 100}%`;
+  const metres = Math.round(Math.min(ALT_BOTTOM, Math.max(0, depthAt(y))));
+  const d = metres / ALT_BOTTOM;
+  altMark.style.top = `${d * 100}%`;
+  altLabel.style.top = `${d * 100}%`;
   altValue.textContent = metres === 0 ? '+0' : `−${metres}`;
   progress.style.transform = `scaleX(${p})`;
 }
