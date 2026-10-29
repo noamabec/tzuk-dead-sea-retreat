@@ -286,6 +286,9 @@ a.hotspot:hover .hs-label, a.hotspot:focus-visible .hs-label { background: var(-
 .place.is-open .place-pin { background: var(--salt); border-color: var(--salt); color: var(--ink); }
 .place.is-open .place-pin .i-pin { opacity: 0; transform: rotate(45deg); }
 .place.is-open .place-pin .i-close { opacity: 1; transform: none; }
+.place.is-static .place-body { padding-inline-end: 26px; }
+.place-pin[hidden] { display: none; }
+.place.is-static .place-media, .place.is-static .place-media img, .place.is-static .place-body { transition: none; }
 .arrival { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; margin: 4px auto 10px; font-size: var(--fs-small); }
 .arrival-label { font-weight: 500; color: var(--copper); }
 .arrival .link-arrow { margin-inline-start: auto; }

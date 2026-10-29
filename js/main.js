@@ -168,13 +168,11 @@ const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
 document.querySelectorAll('.place').forEach((card) => {
   const pin = card.querySelector('.place-pin');
   const setOpen = (open) => { card.classList.toggle('is-open', open); pin.setAttribute('aria-pressed', String(open)); };
+  // touch screens have no hover, so the photo simply stays open and the pin toggle goes away
+  if (!canHover) { card.classList.add('is-open', 'is-static'); pin.hidden = true; return; }
   pin.addEventListener('click', (e) => { e.stopPropagation(); setOpen(!card.classList.contains('is-open')); });
-  if (canHover) {
-    card.addEventListener('mouseenter', () => setOpen(true));
-    card.addEventListener('mouseleave', () => setOpen(false));
-  } else {
-    card.addEventListener('click', () => setOpen(!card.classList.contains('is-open')));
-  }
+  card.addEventListener('mouseenter', () => setOpen(true));
+  card.addEventListener('mouseleave', () => setOpen(false));
 });
 
 /* ---------- typographic list: the photo beside it follows the hovered/focused row ---------- */
