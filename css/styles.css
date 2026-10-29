@@ -171,8 +171,13 @@ p { margin: 0 0 1em; }
 .booking-bar input:hover, .booking-bar select:hover { border-color: var(--ink-2); }
 .booking-bar .link-secondary { grid-column: 1 / -1; justify-self: start; font-size: var(--fs-small); padding-inline-start: 4px; text-decoration: underline; text-underline-offset: 4px; }
 .booking-bar .field-error { grid-column: 1 / -1; margin: 0; color: var(--copper); font-size: var(--fs-small); font-weight: 500; }
-.trust-strip { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 0; margin: 28px auto 0; font-size: var(--fs-small); font-weight: 500; color: var(--ink-2); }
-.trust-strip li + li::before { content: '·'; margin-inline: 16px; color: var(--copper); }
+/* three numbers from the place, read like marks on the depth ruler */
+.trust-strip { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 760px; margin: clamp(32px, 5vw, 56px) auto 0; text-align: center; }
+.trust-strip li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 12px 4px; }
+.trust-strip li::before { content: ''; position: absolute; top: 0; inset-inline-start: 50%; width: 1px; height: 10px; background: var(--copper); }
+.trust-strip li + li { border-inline-start: 1px solid var(--ink-20); }
+.trust-strip b { font-family: var(--font-display); font-weight: 200; font-size: clamp(3.4rem, 6vw, 4.6rem); line-height: .85; color: var(--copper); }
+.trust-strip span { font-size: var(--fs-small); font-weight: 500; color: var(--ink-2); line-height: 1.35; max-width: 16ch; }
 
 /* ---------- sections (shared) ---------- */
 .section { padding-block: var(--space-section) 0; position: relative; }
@@ -421,8 +426,8 @@ html.a11y-links a { text-decoration: underline !important; }
   .booking-bar .link-secondary { justify-self: center; padding-block: 4px; }
   .booking-bar .field:nth-of-type(3) { grid-column: 1 / -1; }
   .booking-bar .btn { grid-column: 1 / -1; width: 100%; }
-  .trust-strip { flex-direction: column; align-items: center; gap: 6px; }
-  .trust-strip li + li::before { content: none; }
+  .trust-strip li { padding-inline: 6px; }
+  .trust-strip span { font-size: .85rem; }
   .promise { min-height: 80vh; }
   .amenities { grid-template-columns: 1fr; }
   .reviews-head { align-items: flex-start; }
