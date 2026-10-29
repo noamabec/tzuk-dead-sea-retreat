@@ -110,7 +110,7 @@ export function renderLayout() {
     <div class="wrap footer-legal">
       <nav aria-label="${t.legalLabel}">${t.legal.map(([h, l]) => `<a href="${h}">${l}</a>`).join('')}</nav>
       <div class="social"><a href="#" aria-label="${t.ig}">${icon.ig}</a><a href="#" aria-label="${t.fb}">${icon.fb}</a></div>
-      <p>© צוק 2026</p>
+      <p>${lang === 'en' ? '© Tzuk 2026' : '© צוק 2026'} · <a class="credit" href="https://www.abecweb.com" target="_blank" rel="noopener">${lang === 'en' ? 'Website by Noam Abecassis · ' : 'האתר נבנה ע"י נועם אבקסיס · '}<bdi>www.abecweb.com</bdi></a></p>
     </div>
     <figure class="sea-level">
       <img src="${root}assets/img/day-sea.jpg" width="1200" height="1200" alt="${t.seaAlt}" loading="lazy">
