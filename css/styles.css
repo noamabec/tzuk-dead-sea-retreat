@@ -412,7 +412,10 @@ html.a11y-links a { text-decoration: underline !important; }
   .hero { min-height: 560px; }
   .hero .h1 { font-size: clamp(3.4rem, 15vw, 4.6rem); }
   /* the hero grows with its copy and leaves the pool visible; the booking card only tucks under its bottom edge */
-  .hero { height: auto; min-height: min(84svh, 700px); padding-bottom: clamp(190px, 52vw, 260px); }
+  /* the photo gets its own band under the copy, so the text never sits on the landscape on any phone ratio */
+  .hero { height: auto; min-height: min(84svh, 700px); display: flex; flex-direction: column; background: var(--salt); }
+  .hero-media { position: relative; inset: auto; flex: 1 0 clamp(250px, 68vw, 360px); order: 2; margin-top: -56px; overflow: hidden; }
+  .hero-media::after { background: linear-gradient(180deg, var(--salt) 0%, rgba(244, 238, 228, .55) 16%, rgba(244, 238, 228, 0) 36%); }
   .hero-img { object-position: 50% 100%; }
   .lead { font-size: 1.15rem; }
   .booking-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; margin-top: -44px; padding: 16px 14px; }
