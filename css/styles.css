@@ -408,10 +408,13 @@ html.a11y-links a { text-decoration: underline !important; }
   .header-actions .btn-sm { padding-inline: 16px; }
   .hero { min-height: 560px; }
   .hero .h1 { font-size: clamp(3.4rem, 15vw, 4.6rem); }
-  /* the hero grows with its copy and keeps room for the overlapping booking bar */
-  .hero { height: auto; min-height: 100svh; padding-bottom: 330px; }
+  /* the hero grows with its copy and leaves the pool visible; the booking card only tucks under its bottom edge */
+  .hero { height: auto; min-height: min(84svh, 700px); padding-bottom: clamp(190px, 52vw, 260px); }
+  .hero-img { object-position: 50% 100%; }
   .lead { font-size: 1.15rem; }
-  .booking-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: -300px; padding: 16px; }
+  .booking-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; margin-top: -44px; padding: 16px 14px; }
+  .booking-bar .dp-trigger { gap: 7px; padding-inline: 10px; font-size: 1rem; }
+  .booking-bar .link-secondary { justify-self: center; padding-block: 4px; }
   .booking-bar .field:nth-of-type(3) { grid-column: 1 / -1; }
   .booking-bar .btn { grid-column: 1 / -1; width: 100%; }
   .trust-strip { flex-direction: column; align-items: center; gap: 6px; }
