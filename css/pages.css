@@ -369,8 +369,8 @@
 .review-grid > div { break-inside: avoid; }
 
 /* ---------- LTR (English) mirrors ---------- */
-:root[dir="ltr"] .link-arrow::after { content: '→'; }
-:root[dir="ltr"] .link-arrow:hover::after { transform: translateX(4px); }
+:root[dir="ltr"] a.btn-ghost::after, :root[dir="ltr"] a.btn-ghost-light::after, :root[dir="ltr"] .link-arrow::after { content: '→'; }
+:root[dir="ltr"] a.btn-ghost:hover::after, :root[dir="ltr"] a.btn-ghost-light:hover::after, :root[dir="ltr"] .link-arrow:hover::after { transform: translateX(4px); }
 :root[dir="ltr"] .scroll-progress span { transform-origin: left; }
 :root[dir="ltr"] .drag-hint::before { content: '← → '; }
 :root[dir="ltr"] .booking-bar { padding: 18px 22px 18px 18px; }

@@ -35,8 +35,8 @@
   --margin: clamp(20px, 5vw, 88px);
   --gutter: 24px;
   --max: 1360px;
-  --space-section: clamp(96px, 14vw, 200px);
-  --space-group: 48px;
+  --space-section: clamp(128px, 15vw, 230px);
+  --space-group: 56px;
   --space-item: 16px;
   --header-h: 76px;
 
@@ -98,7 +98,9 @@ bdi { unicode-bidi: isolate; }
 p { margin: 0 0 1em; }
 
 /* ---------- buttons ---------- */
-.btn {
+/* two button styles only: copper pill (the main action) and outlined pill with an arrow (every secondary action).
+   Underlined text links are kept for a quiet third action right under a main button. */
+.btn, .link-arrow {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px;
   border-radius: var(--r-pill); border: 1px solid transparent; font-weight: 500; font-size: var(--fs-body);
   text-decoration: none; cursor: pointer; transition: background-color .3s var(--ease), color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
@@ -106,14 +108,13 @@ p { margin: 0 0 1em; }
 .btn-sm { min-height: 44px; padding: 0 22px; font-size: var(--fs-small); }
 .btn-primary { background: var(--copper); color: var(--salt); box-shadow: 0 10px 24px -10px rgba(166, 75, 37, .55); }
 .btn-primary:hover { background: var(--copper-hover); transform: translateY(-1px); }
-.btn-ghost { border-color: var(--ink-20); color: var(--ink); background: transparent; }
-.btn-ghost:hover { border-color: var(--ink); }
+.btn-ghost, .link-arrow { border-color: var(--ink-20); color: var(--ink); background: transparent; }
+.btn-ghost:hover, .link-arrow:hover { border-color: var(--ink); }
 .btn-ghost-light { border-color: rgba(244, 238, 228, .4); color: var(--salt); }
 .btn-ghost-light:hover { border-color: var(--salt); }
-.link-arrow, .link-secondary { font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
-.link-arrow::after { content: '←'; transition: transform .3s var(--ease); }
-.link-arrow:hover::after { transform: translateX(-4px); }
-.link-arrow { border-bottom: 1px solid var(--copper); padding-bottom: 2px; }
+a.btn-ghost::after, a.btn-ghost-light::after, .link-arrow::after { content: '←'; transition: transform .3s var(--ease); }
+a.btn-ghost:hover::after, a.btn-ghost-light:hover::after, .link-arrow:hover::after { transform: translateX(-4px); }
+.link-secondary, .link-light { font-size: var(--fs-small); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
 
 /* ---------- header ---------- */
 .site-header { position: fixed; inset-inline: 0; top: 0; z-index: 50; transition: background-color .4s var(--ease), box-shadow .4s var(--ease); }
@@ -169,7 +170,7 @@ p { margin: 0 0 1em; }
 .booking-bar label { font-size: var(--fs-small); font-weight: 500; color: var(--ink-2); padding-inline-start: 4px; }
 .booking-bar input, .booking-bar select { min-width: 0; height: 52px; border: 1px solid var(--ink-20); border-radius: var(--r-field); background: #FBF8F3; padding-inline: 14px; width: 100%; }
 .booking-bar input:hover, .booking-bar select:hover { border-color: var(--ink-2); }
-.booking-bar .link-secondary { grid-column: 1 / -1; justify-self: start; font-size: var(--fs-small); padding-inline-start: 4px; text-decoration: underline; text-underline-offset: 4px; }
+.booking-bar .link-secondary { grid-column: 1 / -1; justify-self: start; padding-inline-start: 4px; }
 .booking-bar .field-error { grid-column: 1 / -1; margin: 0; color: var(--copper); font-size: var(--fs-small); font-weight: 500; }
 /* three numbers from the place, read like marks on the depth ruler */
 .trust-strip { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 760px; margin: clamp(32px, 5vw, 56px) auto 0; text-align: center; }
@@ -293,10 +294,10 @@ a.hotspot:hover .hs-label, a.hotspot:focus-visible .hs-label { background: var(-
 .place.is-static .place-body { padding-inline-end: 26px; }
 .place-pin[hidden] { display: none; }
 .place.is-static .place-media, .place.is-static .place-media img, .place.is-static .place-body { transition: none; }
-.arrival { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; margin: 4px auto 10px; font-size: var(--fs-small); }
+.arrival { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin: 4px auto 10px; font-size: var(--fs-small); }
 .arrival-label { font-weight: 500; color: var(--copper); }
 .arrival .link-arrow { margin-inline-start: auto; }
-.drag-hint { font-size: var(--fs-small); color: var(--ink-2); margin: 0; }
+.drag-hint { font-size: var(--fs-small); color: var(--ink-2); margin: 0 auto 14px; }
 .drag-hint::before { content: '→ ← '; color: var(--copper); }
 
 /* ---------- reviews ---------- */
@@ -326,7 +327,7 @@ a.hotspot:hover .hs-label, a.hotspot:focus-visible .hs-label { background: var(-
 .final-content { position: relative; z-index: 2; color: var(--salt); display: flex; flex-direction: column; align-items: center; gap: 18px; }
 .final-content .h2 { font-size: var(--fs-1); }
 .final-content p { margin: 0; font-size: var(--fs-3); }
-.link-light { color: var(--salt); font-size: var(--fs-small); text-underline-offset: 4px; }
+.link-light { color: var(--salt); }
 
 /* ---------- footer: the sea at the bottom of the descent ---------- */
 .site-footer { position: relative; background: #2F4F4C; color: var(--salt); padding-top: clamp(64px, 8vw, 110px); overflow: hidden; }
@@ -407,7 +408,10 @@ html.a11y-links a { text-decoration: underline !important; }
   .day-cta { margin-top: 40px; }
 }
 @media (max-width: 720px) {
-  :root { --header-h: 64px; --space-group: 36px; }
+  :root { --header-h: 64px; --space-group: 44px; }
+  /* on phones every action is a full-width button, so buttons always sit in the same place */
+  main .btn:not(.btn-sm), main .link-arrow { width: 100%; }
+  .arrival .link-arrow { margin: 10px 0 0; }
   .logo-word { font-size: 2.2rem; }
   .logo-sub, .logo-line { display: none; }
   .header-actions .btn-sm { padding-inline: 16px; }
