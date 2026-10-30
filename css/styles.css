@@ -412,6 +412,10 @@ html.a11y-links a { text-decoration: underline !important; }
   :root { --header-h: 64px; --space-group: 44px; }
   /* on phones every action is a full-width button, so buttons always sit in the same place */
   main .btn:not(.btn-sm), main .link-arrow { width: 100%; }
+  .promise-stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; align-items: start; gap: 16px; }
+  .promise-stats div { justify-content: flex-end; }
+  .promise-stats dd { font-size: 2.5rem; }
+  .promise-stats dt { letter-spacing: .02em; }
   .arrival .link-arrow { margin: 10px 0 0; }
   .logo-word { font-size: 2.2rem; }
   .logo-sub, .logo-line { display: none; }
