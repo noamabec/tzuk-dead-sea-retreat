@@ -68,7 +68,7 @@ export function renderLayout() {
   <header class="site-header${page === 'home' ? '' : ' is-inner'}" id="siteHeader">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="${t.homeLabel}">
-        <span class="logo-word">צוק</span><span class="logo-line" aria-hidden="true"></span><span class="logo-sub">${t.sub}</span>
+        <span class="logo-word">צ<span class="vav">ו</span>ק</span><span class="logo-line" aria-hidden="true"></span><span class="logo-sub">${t.sub}</span>
       </a>
       <nav class="main-nav" aria-label="${t.menu}"><ul>${nav}</ul></nav>
       <div class="header-actions">
@@ -103,7 +103,7 @@ export function renderLayout() {
       </div>
     </div>
     <div class="wrap footer-grid">
-      <div class="footer-brand"><p class="logo logo-light"><span class="logo-word">צוק</span></p><p>${t.blurb}</p></div>
+      <div class="footer-brand"><p class="logo logo-light"><span class="logo-word">צ<span class="vav">ו</span>ק</span></p><p>${t.blurb}</p></div>
       ${cols}
       <div class="footer-contact"><h3>${t.talk}</h3><a href="${CONTACT.phoneHref}"><bdi>${CONTACT.phone}</bdi></a><a href="${CONTACT.whatsapp}">${t.whatsapp}</a><a href="mailto:${CONTACT.email}"><bdi>${CONTACT.email}</bdi></a><p>${t.address}</p></div>
     </div>

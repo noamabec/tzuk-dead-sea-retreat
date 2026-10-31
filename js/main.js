@@ -1,6 +1,6 @@
 // צוק · Tzuk — interactions for every page.
 // The site is a descent: cliff top (hero) → sea (footer). The altimeter follows the scroll.
-import { renderLayout } from './layout.js?v=3';
+import { renderLayout } from './layout.js?v=5';
 import { rangePicker } from './datepicker.js?v=3';
 
 const { lang, page } = renderLayout();
